@@ -17,6 +17,15 @@ public class GlobalExceptionHandler {
         );
     }
 
+    @ExceptionHandler(TradeNotFoundException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public ErrorResponse handleTradeNotFound(TradeNotFoundException ex) {
+        return new ErrorResponse(
+                "TRADE_NOT_FOUND",
+                ex.getMessage()
+        );
+    }
+
     public record ErrorResponse(
             String code,
             String message

@@ -19,3 +19,4 @@ public record TradeResponse(
         TradeStatus status
 ) {
 }
+
